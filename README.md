@@ -43,12 +43,7 @@ Once the script runs, a **Gradio UI** will open in your browser. Type messages a
 
 ---
 
-## 🤝 Contributing
-1. **Fork** the repo  
-2. **Create a new branch** (`feature-xyz`)  
-3. **Commit changes** & submit a PR  
 
----
 
 ## 🐟 License
 This project is licensed under the AGPL 3.0 License .
