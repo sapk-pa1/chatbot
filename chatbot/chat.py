@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv 
 from google import genai
 import sys 
-
+from prompts.generation_prompt import chatbot_prompt 
 
 load_dotenv()
 
@@ -11,11 +11,14 @@ class ConversationalChatbot:
         # Load the gemini api 
         self.model = genai.Client(api_key=os.getenv("GEMINI_API")) 
 
-    def chat(self, user_input: str) -> str:
+
+    def chat(self, user_input: str, history= [] ) -> str:
+        prompt = chatbot_prompt.format(user_input=user_input, history= history)
         # Chatbot response generation 
         response = self.model.models.generate_content(
                                                 model="gemini-2.0-flash",
-                                                contents=user_input)
+                                                contents=prompt, 
+                                                )
         return response.text 
 
 

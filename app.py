@@ -5,7 +5,11 @@ from chatbot.chat import ConversationalChatbot
 bot = ConversationalChatbot()
 
 def chat_function(user_input, history) -> str:
-    response = bot.chat(user_input) 
+    
+    if history: 
+        response = bot.chat(user_input, history) 
+    else: 
+        response = bot.chat(user_input) 
     return response
 
 
