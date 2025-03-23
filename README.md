@@ -21,8 +21,7 @@ cd chatbot_project
 
 It is recommended to create a virtual environment before installing dependencies to ensure a clean workspace.
 
-#### Using `venv` (Recommended)
-
+#### Using `venv`
 ```bash
 python -m venv venv
 source venv/bin/activate  # On macOS/Linux
@@ -32,11 +31,16 @@ venv\Scripts\activate     # On Windows
 #### Using `conda`
 
 ```bash
-conda create --name xchat_env python=3.9
+conda create -n xchat_env python=3.10
 conda activate xchat_env
 ```
+### 3. Install Dependencies
 
-### 3. Configure Environment Variables
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure Environment Variables
 
 There is an `.env.example` file in the repository. Copy it to create a `.env` file and set up your API key.
 
@@ -50,11 +54,7 @@ Edit the `.env` file and replace `your_gemini_api_key` with your actual API key:
 GEMINI_API=your_gemini_api_key
 ```
 
-### 4. Install Dependencies
 
-```bash
-pip install -r requirements.txt
-```
 
 ### 5. Run the Chatbot
 
