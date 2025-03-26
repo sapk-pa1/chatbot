@@ -3,13 +3,16 @@ from dotenv import load_dotenv
 from google import genai
 import sys 
 from prompts.generation_prompt import chatbot_prompt 
+from database.chromedb import ChromaStorage 
 
 load_dotenv()
 
 class ConversationalChatbot: 
     def __init__(self) -> None:
         # Load the gemini api 
-        self.model = genai.Client(api_key=os.getenv("GEMINI_API")) 
+        self.model = genai.Client(api_key=os.getenv("GEMINI_API"))
+        self.vector_database = ChromaStorage() 
+         
 
 
     def chat(self, user_input: str, history= [] ) -> str:
